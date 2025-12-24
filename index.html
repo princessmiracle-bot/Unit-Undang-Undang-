@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Unit Undang Undang LADA</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header>
+  <h1>SELAMAT DATANG KE UNIT UNDANG UNDANG LADA</h1>
+  <p>“Semoga dipermudahkan urusan kita semua”</p>
+</header>
+
+<div class="container card">
+  <h3>Tarikh Hari Ini</h3>
+  <p id="today"></p>
+
+  <h3>Event Hari Ini</h3>
+  <div id="todayEvent">Tiada event hari ini</div>
+</div>
+
+<div class="container" style="text-align:center">
+  <a href="surat.html" class="btn">Surat Masuk Unit Undang-Undang</a>
+  <a href="program.html" class="btn gold">Program Unit Undang-Undang</a>
+</div>
+
+<script>
+  const today = new Date().toLocaleDateString('ms-MY');
+  document.getElementById("today").innerText = today;
+</script>
+
+<script src="js/program.js"></script>
+</body>
+</html>
+</div>
+<script src="js/index.js"></script>
+<div class="container card">
+  <h3>Kalendar Hari Ini</h3>
+  <p id="today"></p>
+  <div id="calendar"></div>
+</div>
+
+<div class="container card">
+  <h3>Senarai Pegawai Unit Undang-Undang</h3>
+  <div id="pegawaiList"></div>
+</div>

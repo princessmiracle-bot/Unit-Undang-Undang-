@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Program Unit Undang-Undang</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header>
+  <h1>Program Unit Undang-Undang</h1>
+</header>
+
+<div class="container card">
+  <h3>Tarikh Hari Ini</h3>
+  <p id="todayProgram"></p>
+</div>
+
+<div class="container card">
+  <input type="text" id="searchProgram" placeholder="Cari program...">
+
+  <h3>Senarai Program</h3>
+  <div id="programList"></div>
+
+  <h3>Reminder Maklum Balas</h3>
+  <div id="reminderList"></div>
+
+  <a href="program-admin.html" class="admin-btn">Login Admin</a>
+</div>
+
+<script src="js/program.js"></script>
+<script>
+  const today = new Date().toLocaleDateString('ms-MY');
+  document.getElementById("todayProgram").innerText = today;
+</script>
+
+</body>
+</html>

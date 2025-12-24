@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Admin Program</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<body>
+  <!-- Toolbar Home & Logout -->
+  <div style="display:flex; justify-content:flex-end; gap:10px; margin-bottom:20px;">
+    <a href="index.html" class="btn">🏠 Home</a>
+    <button class="btn gold" onclick="logoutProgram()">Logout</button>
+  </div>
+
+  <!-- Form tambah program / maklum balas -->
+  <div class="container card">
+    <!-- input fields, save button dsb -->
+  </div>
+</body>
+
+
+<header>
+  <h1>Admin – Program Unit Undang-Undang</h1>
+</header>
+
+<div class="container card" id="loginBoxProgram">
+  <input id="idProgram" placeholder="ID">
+  <input id="passProgram" type="password" placeholder="Password">
+  <button class="btn" onclick="loginProgram()">Login</button>
+</div>
+
+<div class="container card" id="adminBoxProgram" style="display:none">
+  <h3>Isi Program / Aktiviti / Maklum Balas</h3>
+
+  <select id="jenisProgram">
+    <option value="event">Meeting / Aktiviti / Kursus</option>
+    <option value="reminder">Maklum Balas</option>
+  </select>
+
+  <input type="date" id="tarikhTerimaProgram" placeholder="Tarikh Terima">
+  <input type="date" id="tarikhSuratProgram" placeholder="Tarikh Surat">
+  <input id="perkaraProgram" placeholder="Perkara">
+  <input id="daripadaProgram" placeholder="Daripada">
+  <input id="tindakanProgram" placeholder="Tindakan kepada">
+  <input type="date" id="tarikhAkhir" placeholder="Tarikh Akhir">
+
+  <input id="pengerusi" placeholder="Pengerusi (jika ada)">
+  <input id="tempat" placeholder="Tempat">
+  <textarea id="detail" placeholder="Detail program"></textarea>
+
+  <button class="btn" onclick="saveProgram()">Simpan</button>
+  <button class="btn gold" onclick="logoutProgram()">Logout</button>
+</div>
+
+<script src="js/auth.js"></script>
+<script src="js/program.js"></script>
+
+</body>
+</html>
+

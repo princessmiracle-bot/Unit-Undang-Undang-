@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+  <meta charset="UTF-8">
+  <title>Surat Masuk – Unit Undang-Undang</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<header>
+  <h1>Surat Masuk Unit Undang-Undang</h1>
+</header>
+
+<div class="container card">
+
+  <!-- HOME + LOGIN ADMIN -->
+  <div class="toolbar">
+    <a href="index.html" class="btn">🏠 Home</a>
+    <button class="btn gold" onclick="showAdminLogin()">🔐 Login Admin</button>
+  </div>
+
+  <!-- FORM LOGIN ADMIN HIDDEN -->
+  <div id="adminLoginBox" style="display:none; margin-top:20px; border:1px solid #ccc; padding:20px; border-radius:6px;">
+    <h3>Login Admin</h3>
+    <input id="id" placeholder="ID">
+    <input id="pass" type="password" placeholder="Password">
+    <button class="btn" onclick="loginSurat()">Login</button>
+    <button class="btn gold" onclick="closeAdminLogin()">Tutup</button>
+  </div>
+
+  <!-- CARIAN -->
+  <input 
+    type="text" 
+    id="searchInput" 
+    placeholder="🔍 Cari perkara / rujukan / pengirim..."
+    onkeyup="carianSurat()"
+  >
+
+  <!-- SENARAI SURAT -->
+  <table>
+    <thead>
+      <tr>
+        <th>Tarikh Terima</th>
+        <th>Tarikh Surat</th>
+        <th>Perkara</th>
+        <th>No Rujukan</th>
+        <th>Daripada</th>
+        <th>Kepada</th>
+      </tr>
+    </thead>
+    <tbody id="suratList">
+      <!-- Data akan diisi JS -->
+    </tbody>
+  </table>
+
+  <!-- ADMIN BOX HIDDEN -->
+  <div id="adminBox" style="display:none; margin-top:20px;">
+    <h3>Admin – Isi Surat Masuk</h3>
+    <input type="date" id="tarikhTerima">
+    <input type="date" id="tarikhSurat">
+    <select id="kategori">
+      <option>Surat</option>
+      <option>Memo</option>
+      <option>Dokumen</option>
+      <option>Emel</option>
+    </select>
+    <input id="perkara" placeholder="Perkara">
+    <input id="rujukan" placeholder="No Rujukan">
+    <select id="daripada">
+      <option>Dalaman LADA</option>
+      <option>Organisasi / Pihak Luar</option>
+      <option>Peguam</option>
+    </select>
+    <input id="pengirim" placeholder="Nama Pengirim">
+    <input id="tindakan" placeholder="Tindakan P(UU)">
+    <input id="kepada" placeholder="Kepada">
+    <button class="btn" onclick="saveSurat()">Simpan</button>
+
+    <hr>
+
+    <h3>Senarai Surat Masuk (Admin)</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Tarikh Terima</th>
+          <th>Tarikh Surat</th>
+          <th>Perkara</th>
+          <th>No Rujukan</th>
+          <th>Daripada</th>
+          <th>Tindakan</th>
+          <th>Kepada</th>
+          <th>Aksi</th>
+        </tr>
+      </thead>
+      <tbody id="suratListAdmin"></tbody>
+    </table>
+  </div>
+
+</div>
+
+<script src="js/surat.js"></script>
+<script>
+// Fungsi search
+function carianSurat() {
+  let input = document.getElementById("searchInput").value.toLowerCase();
+  let rows = document.querySelectorAll("#suratList tr");
+  rows.forEach(row => {
+    let text = row.innerText.toLowerCase();
+    row.style.display = text.includes(input) ? "" : "none";
+  });
+}
+
+// Login Admin
+function showAdminLogin() {
+  document.getElementById('adminLoginBox').style.display = 'block';
+}
+function closeAdminLogin() {
+  document.getElementById('adminLoginBox').style.display = 'none';
+}
+function loginSurat() {
+  const id = document.getElementById("id").value;
+  const pass = document.getElementById("pass").value;
+  const adminBox = document.getElementById('adminBox');
+
+  if(id === "admin" && pass === "UULADA"){
+    alert("Login berjaya! Admin boleh tambah/edit surat");
+    adminBox.style.display = 'block';
+    document.getElementById('adminLoginBox').style.display = 'none';
+  } else {
+    alert("Login gagal");
+  }
+}
+</script>
+</body>
+</html>
