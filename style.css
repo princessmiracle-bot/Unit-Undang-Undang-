@@ -1,0 +1,168 @@
+/* ===============================
+   GLOBAL
+================================ */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background: #f4f6f5;
+  color: #333;
+}
+
+/* ===============================
+   HEADER
+================================ */
+header {
+  background: linear-gradient(to right, #0f3d2e, #1e6f5c);
+  color: white;
+  padding: 40px 20px;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+header h1 {
+  font-family: Georgia, "Times New Roman";
+  font-size: 34px;
+  margin: 0;
+}
+
+header p {
+  font-size: 16px;
+  font-style: italic;
+}
+
+/* ===============================
+   CONTAINER & CARD
+================================ */
+.container {
+  max-width: 1100px;
+  margin: 20px auto;
+  padding: 20px;
+}
+
+.card {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+}
+
+/* ===============================
+   BUTTON
+================================ */
+.btn {
+  display: inline-block;
+  padding: 12px 22px;
+  background: #1e6f5c;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+.btn.gold {
+  background: #c9a227;
+}
+
+.admin-btn {
+  background: #444;
+  padding: 10px 18px;
+  color: white;
+  border-radius: 4px;
+  text-decoration: none;
+}
+
+/* ===============================
+   TOOLBAR (HOME & LOGOUT)
+================================ */
+.toolbar {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+/* ===============================
+   FORM
+================================ */
+input, select, textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 6px 0;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+textarea {
+  resize: vertical;
+}
+
+/* ===============================
+   TABLE
+================================ */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+  background: white;
+}
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  font-size: 14px;
+  text-align: left;
+}
+
+th {
+  background: #1e6f5c;
+  color: white;
+}
+
+tr:nth-child(even) {
+  background: #f9f9f9;
+}
+
+/* ===============================
+   PROFILE
+================================ */
+.profile {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.profile img {
+  width: 80px;
+  border-radius: 50%;
+  border: 2px solid #1e6f5c;
+}
+
+.profile p {
+  margin-top: 8px;
+  font-weight: bold;
+}
+
+/* ===============================
+   RESPONSIVE
+================================ */
+@media (max-width: 768px) {
+  .toolbar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .btn {
+    width: 100%;
+    text-align: center;
+  }
+}
